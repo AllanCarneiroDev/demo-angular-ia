@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+	--paper: #f5f1e9;
+	--ink: #202321;
+	--coral: #e85d45;
+	--mint: #7db9a5;
+	--muted: #747873;
+	--line: #d5d0c6;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: 'Space Grotesk', sans-serif; }
+button, input { font: inherit; }

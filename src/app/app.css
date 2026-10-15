@@ -1,0 +1,46 @@
+:host {
+	display: block;
+}
+
+.shell {
+	width: min(1120px, calc(100% - 48px));
+	margin: 0 auto;
+	padding: 28px 0 34px;
+}
+
+.topbar, footer, .tabs, .tab, .brand, .version, footer span {
+	display: flex;
+	align-items: center;
+}
+
+.topbar { justify-content: space-between; }
+.brand { gap: 10px; color: var(--ink); font-weight: 600; letter-spacing: -.04em; }
+.brand strong { color: var(--coral); }
+.brand-mark { display: grid; place-items: center; width: 30px; height: 30px; background: var(--coral); color: white; font-family: 'DM Mono', monospace; font-size: 14px; }
+.version, .eyebrow, .tab-number, footer { font-family: 'DM Mono', monospace; text-transform: uppercase; letter-spacing: .08em; font-size: 11px; }
+.version { color: var(--muted); }
+.intro { padding: 92px 0 56px; max-width: 710px; }
+.eyebrow { color: var(--coral); margin: 0 0 20px; }
+h1 { margin: 0; color: var(--ink); font-size: clamp(3.6rem, 8vw, 7.4rem); line-height: .9; letter-spacing: -.08em; font-weight: 600; }
+h1 em { color: var(--coral); font-style: normal; }
+.intro-copy { max-width: 410px; margin: 30px 0 0 8px; color: var(--muted); line-height: 1.6; }
+.tabs { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.tab { flex: 1; gap: 16px; min-height: 70px; padding: 0 20px; border: 0; border-right: 1px solid var(--line); background: transparent; color: var(--muted); cursor: pointer; font: 500 15px 'Space Grotesk', sans-serif; text-align: left; transition: background .2s, color .2s; }
+.tab:last-child { border-right: 0; }
+.tab:hover, .tab.active { background: var(--ink); color: var(--paper); }
+.tab-number { color: var(--coral); }
+.tab-arrow { margin-left: auto; font-size: 19px; opacity: .6; }
+.workspace { min-height: 360px; padding: 48px 0 64px; }
+footer { justify-content: space-between; color: var(--muted); border-top: 1px solid var(--line); padding-top: 18px; }
+footer span { gap: 8px; }
+footer i { width: 7px; height: 7px; border-radius: 50%; background: var(--mint); }
+
+@media (max-width: 640px) {
+	.shell { width: min(100% - 32px, 1120px); padding-top: 20px; }
+	.intro { padding: 72px 0 42px; }
+	h1 { font-size: clamp(3.2rem, 17vw, 5rem); }
+	.tabs { display: grid; grid-template-columns: repeat(3, 1fr); }
+	.tab { display: block; min-height: 88px; padding: 14px 10px; font-size: 13px; }
+	.tab-number, .tab-arrow { display: block; margin-bottom: 8px; }
+	footer { align-items: flex-start; flex-direction: column; gap: 10px; }
+}

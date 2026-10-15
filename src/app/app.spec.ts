@@ -15,10 +15,17 @@ describe('App', () => {
     expect(app).toBeTruthy();
   });
 
-  it('should render title', async () => {
+  it('should render the component lab and switch tabs', async () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, angular-ia');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Componentes que');
+    expect(compiled.querySelector('app-overview')).toBeTruthy();
+
+    const tabs = compiled.querySelectorAll<HTMLButtonElement>('.tab');
+    tabs[1].click();
+    fixture.detectChanges();
+
+    expect(compiled.querySelector('app-counter')).toBeTruthy();
   });
 });
